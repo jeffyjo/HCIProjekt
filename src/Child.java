@@ -1,39 +1,71 @@
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.LinkedList;
-
 /**
  * Created by jeffjorgensen on 15/03/2016.
  */
 public class Child {
     private String name;
-    private int Cpr;
     private String adress;
+    private String byOgPostnummer;
+    private int Cpr;
     private String homePhone;
+    private String parent1;
+    private String parent1Cell;
+    private String parent1WorkPhone;
+    private String parent2;
+    private String parent2Cell;
+    private String parent2WorkPhone;
+    private String contactPerson;
     private String cellPhone;
-    private String contactPhone;
-    private String eMail;
-    private int numParents;
-    private Parent[] parents = new Parent[numParents];
+    private String startDate;
     private String note;
-    private Calendar calendar;
 
-    public Child() {}
+    public Child(){
+        this.name = "";
+        this.adress = "";
+        this.byOgPostnummer = "";
+        this.Cpr = 0;
+        this.parent1 = "";
+        this.parent1Cell = "";
+        this.parent1WorkPhone = "";
+        this.parent2 = "";
+        this.parent2Cell = "";
+        this.parent2WorkPhone = "";
+        this.contactPerson = "";
+        this.cellPhone = "";
+        this.startDate = "";
+        this.note = "";
+    }
 
-    public Child(String name, int cpr, String adress, String homePhone,
-                 String cellPhone, String contactPhone, String eMail,
-                 int numParents, Parent[] parents, String note, Calendar calendar) {
+    public Child(String name) {
+        this.name = name;
+    }
+
+    public Child(String name, int cpr) {
         this.name = name;
         Cpr = cpr;
+    }
+
+    public Child(String name, String adress, String byOgPostnummer,
+                 int cpr, String homePhone, String parent1, String parent1Cell,
+                 String parent1WorkPhone, String parent2,
+                 String parent2Cell, String parent2WorkPhone,
+                 String contactPerson, String cellPhone,
+                 String startDate, String note) {
+
+        this.name = name;
         this.adress = adress;
+        this.byOgPostnummer = byOgPostnummer;
+        Cpr = cpr;
         this.homePhone = homePhone;
+        this.parent1 = parent1;
+        this.parent1Cell = parent1Cell;
+        this.parent1WorkPhone = parent1WorkPhone;
+        this.parent2 = parent2;
+        this.parent2Cell = parent2Cell;
+        this.parent2WorkPhone = parent2WorkPhone;
+        this.contactPerson = contactPerson;
         this.cellPhone = cellPhone;
-        this.contactPhone = contactPhone;
-        this.eMail = eMail;
-        this.numParents = numParents;
-        this.parents = parents;
+        this.startDate = startDate;
         this.note = note;
-        this.calendar = calendar;
     }
 
     public String getName() {
@@ -44,20 +76,28 @@ public class Child {
         this.name = name;
     }
 
-    public int getCpr() {
-        return Cpr;
-    }
-
-    public void setCpr(int cpr) {
-        Cpr = cpr;
-    }
-
     public String getAdress() {
         return adress;
     }
 
     public void setAdress(String adress) {
         this.adress = adress;
+    }
+
+    public String getByOgPostnummer() {
+        return byOgPostnummer;
+    }
+
+    public void setByOgPostnummer(String byOgPostnummer) {
+        this.byOgPostnummer = byOgPostnummer;
+    }
+
+    public int getCpr() {
+        return Cpr;
+    }
+
+    public void setCpr(int cpr) {
+        Cpr = cpr;
     }
 
     public String getHomePhone() {
@@ -68,6 +108,62 @@ public class Child {
         this.homePhone = homePhone;
     }
 
+    public String getParent1() {
+        return parent1;
+    }
+
+    public void setParent1(String parent1) {
+        this.parent1 = parent1;
+    }
+
+    public String getParent1Cell() {
+        return parent1Cell;
+    }
+
+    public void setParent1Cell(String parent1Cell) {
+        this.parent1Cell = parent1Cell;
+    }
+
+    public String getParent1WorkPhone() {
+        return parent1WorkPhone;
+    }
+
+    public void setParent1WorkPhone(String parent1WorkPhone) {
+        this.parent1WorkPhone = parent1WorkPhone;
+    }
+
+    public String getParent2() {
+        return parent2;
+    }
+
+    public void setParent2(String parent2) {
+        this.parent2 = parent2;
+    }
+
+    public String getParent2Cell() {
+        return parent2Cell;
+    }
+
+    public void setParent2Cell(String parent2Cell) {
+        this.parent2Cell = parent2Cell;
+    }
+
+    public String getParent2WorkPhone() {
+        return parent2WorkPhone;
+    }
+
+    public void setParent2WorkPhone(String parent2WorkPhone) {
+        this.parent2WorkPhone = parent2WorkPhone;
+    }
+
+    public String getContactPerson() {
+        return contactPerson;
+    }
+
+    public void setContactPerson(String contactPerson) {
+        this.contactPerson = contactPerson;
+    }
+
     public String getCellPhone() {
         return cellPhone;
     }
@@ -76,44 +172,12 @@ public class Child {
         this.cellPhone = cellPhone;
     }
 
-    public String getContactPhone() {
-        return contactPhone;
+    public String getStartDate() {
+        return startDate;
     }
 
-    public void setContactPhone(String contactPhone) {
-        this.contactPhone = contactPhone;
-    }
-
-    public String geteMail() {
-        return eMail;
-    }
-
-    public void seteMail(String eMail) {
-        this.eMail = eMail;
-    }
-
-    public int getNumParents() {
-        return numParents;
-    }
-
-    public void setNumParents(int numParents) {
-        this.numParents = numParents;
-    }
-
-    public Parent[] getParents() {
-        return parents;
-    }
-
-    public void setParents(Parent p) {
-        int counter = 0;
-        for(int i = 0; i < getNumParents(); i++){
-            if (parents[i].equals(null)) {
-                parents[i] = p;
-                counter++;
-            } else {
-                System.out.println("Too many parents");
-            }
-        }
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
     }
 
     public String getNote() {
@@ -124,16 +188,9 @@ public class Child {
         this.note = note;
     }
 
-    public Calendar getCalendar() {
-        return calendar;
-    }
-
-    public void setCalendar(Calendar calendar) {
-        this.calendar = calendar;
-    }
-
     public String toString(){
-        return ";" + name + ";" + Cpr + ";" + adress + ";" + homePhone + ";" + cellPhone + ";" + contactPhone + ";"
-                + eMail + ";" + numParents + ";" + ";" + parents + ";" + note + ";" + calendar + ";";
+        return name + adress + byOgPostnummer + Cpr + parent1 + parent1Cell + parent1WorkPhone
+                + parent2 + parent2Cell + parent2WorkPhone + contactPerson + cellPhone + startDate
+                + note;
     }
 }

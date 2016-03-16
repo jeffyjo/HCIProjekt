@@ -32,4 +32,8 @@ public class Parent {
     public void setWorkPhone(String workPhone) {
         this.workPhone = workPhone;
     }
+
+    public String toString(){
+        return name + " " + workPhone;
+    }
 }

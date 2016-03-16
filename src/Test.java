@@ -12,18 +12,16 @@ public class Test {
         c.setName("John");
         c.setCpr(123456789);
         c.setAdress("noget");
-        c.setNumParents(2);
 
+        System.out.println(c);
 
         Parent p = new Parent("Hej");
         Parent p1 = new Parent("BLA");
-        System.out.println(""+ p + p1);
+        System.out.println(""+ p + "\n" +p1);
 
-        c.setParents(p);
-        c.setParents(p1);
+        //c.setParents(p1);
 
 
-        System.out.println(c);
 
         //launch(args);
     }

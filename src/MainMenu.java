@@ -44,9 +44,11 @@ public class MainMenu extends Application{
 
         // Scenes
         Scene menuScene = new Scene(borderPane, 500, 500);
-        Scene indskrivningsScene = new Scene(gridPane, 500, 500);
+        Indskrivning indskrivning = new Indskrivning();
+        VisAlle visAlle = new VisAlle();
 
-        indskrivningButton.setOnAction(e -> primaryStage.setScene(indskrivningsScene));
+        indskrivningButton.setOnAction(e -> indskrivning.start(primaryStage));
+        visBørnButton.setOnAction(e -> visAlle.start(primaryStage));
         primaryStage.setScene(menuScene);
         primaryStage.setTitle("Roskilde Frie Børnehave");
         primaryStage.show();
